@@ -9,7 +9,7 @@ module.exports = (env) => {
     return {
         entry: './src/app.js', // relative path is fine!
         output: {
-            path: path.join(__dirname, 'public'), // need absolute path!
+            path: path.join(__dirname, 'public', 'dist'), // need absolute path!
             filename: 'bundle.js'
         },
         // loader
@@ -44,7 +44,8 @@ module.exports = (env) => {
         devtool: isProduction ? 'source-map':'inline-source-map', // can see which source file has a bug
         devServer: {
             contentBase: path.join(__dirname, 'public'),
-            historyApiFallback: true
+            historyApiFallback: true,
+            publicPath: '/dist/'
         }
     };
 };
