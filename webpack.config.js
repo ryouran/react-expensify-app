@@ -16,7 +16,7 @@ module.exports = (env) => {
     const CSSExtract = new ExtractTextPlugin('styles.css');
 
     return {
-        entry: './src/app.js', // relative path is fine!
+        entry: ['babel-polyfill','./src/app.js'], // relative path is fine!
         output: {
             path: path.join(__dirname, 'public', 'dist'), // need absolute path!
             filename: 'bundle.js'
